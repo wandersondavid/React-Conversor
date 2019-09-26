@@ -22,14 +22,15 @@ export default class Conversor extends Component{
      let moedaB_valor = (parseFloat(this))
      this.setState({moedaB_valor})
  })
+// console.log("teste")
     }
  
     render(){
         return(
             <div className="conversor">
-                <h2>{this.props.moedaA}para{this.props.moedaB}</h2>
-                <input type="text"></input>
-                <input type="button" value="Converter"></input>
+                <h2>{this.props.moedaA} para {this.props.moedaB}</h2>
+                <input type="text" onChange={(event)=>{this.setState({moedaA_valor:event.target.value})}}></input>
+                <input type="button" value="Converter" onClick={this.converter}></input>
                 <h2>valor convertido</h2>
             </div>
         )
